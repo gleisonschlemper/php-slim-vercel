@@ -15,12 +15,12 @@ $app->get('/hello/{name}', function (Request $request, Response $response, array
 });
 
 $app->get('/hello/', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("Hello World!");
+    $response->getBody()->write("Hello World! Api de Gelvazio!");
     return $response;
 });
 
 $app->get('/', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write("Index!");
+    $response->getBody()->write("Index! Api de Gelvazio!");
     return $response;
 });
 
