@@ -65,19 +65,29 @@ $app->post('/setwebhook/', function (Request $request, Response $response, array
 
     require_once ("controllers/ControllerApiTelegram.php");
 
-    ControllerApiTelegram::setWebhook("https://api-php-slim-vercel.vercel.app/webhook/");
+    ControllerApiTelegram::setWebhook("https://api-php-slim-vercel.vercel.app/webhook");
 
     $response->getBody()->write("Setando o webhook!");
 
     return $response;
 });
 
-$app->post('/webhook/', function (Request $request, Response $response, array $args) {
+$app->post('/webhook', function (Request $request, Response $response, array $args) {
     require_once ("controllers/ControllerApiTelegram.php");
 
     ControllerApiTelegram::sendMessage("Chatbot respondendo!");
 
     $response->getBody()->write("Chatbot respondendo!");
+
+    return $response;
+});
+
+$app->get('/listwebhook', function (Request $request, Response $response, array $args) {
+    require_once ("controllers/ControllerApiTelegram.php");
+
+    $aDadosWebhook = ControllerApiTelegram::getWebhookInfo();
+
+    $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
 
     return $response;
 });
