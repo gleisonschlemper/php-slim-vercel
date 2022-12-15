@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -28,6 +29,15 @@ $app->get('/testbot/', function (Request $request, Response $response, array $ar
     
 //    require_once ("controllers/ControllerApiTelegram.php");
 //    ControllerApiTelegram::sendMessage("Informe seu CPF para iniciar a conversa! Senac - Testes 123");
+
+    $response->getBody()->write("Enviando mensagem para o chatbot!");
+});
+
+$app->get('/testbotusername/', function (Request $request, Response $response, array $args) {
+
+    require_once ("controllers/ControllerApiTelegram.php");
+
+    ControllerApiTelegram::sendMessage("Chatbot Gelvazio!Senac");
 
     $response->getBody()->write("Enviando mensagem para o chatbot!");
 });
