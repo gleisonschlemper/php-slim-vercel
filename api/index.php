@@ -67,7 +67,7 @@ $app->post('/setwebhook/', function (Request $request, Response $response, array
 
     ControllerApiTelegram::setWebhook("https://api-php-slim-vercel.vercel.app/webhook/");
 
-    $response->getBody()->write("Enviando mensagem para o chatbot!");
+    $response->getBody()->write("Setando o webhook!");
 
     return $response;
 });
