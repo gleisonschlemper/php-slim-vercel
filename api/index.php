@@ -61,4 +61,25 @@ $app->get('/testbotusername/{name}', function (Request $request, Response $respo
     return $response;
 });
 
+$app->post('/setwebhook/', function (Request $request, Response $response, array $args) {
+
+    require_once ("controllers/ControllerApiTelegram.php");
+
+    ControllerApiTelegram::setWebhook("https://api-php-slim-vercel.vercel.app/webhook/");
+
+    $response->getBody()->write("Enviando mensagem para o chatbot!");
+
+    return $response;
+});
+
+$app->post('/webhook/', function (Request $request, Response $response, array $args) {
+    require_once ("controllers/ControllerApiTelegram.php");
+
+    ControllerApiTelegram::sendMessage("Chatbot respondendo!");
+
+    $response->getBody()->write("Chatbot respondendo!");
+
+    return $response;
+});
+
 $app->run();
