@@ -75,6 +75,8 @@ $app->post('/setwebhook/', function (Request $request, Response $response, array
 $app->post('/webhook', function (Request $request, Response $response, array $args) {
     require_once ("controllers/ControllerApiTelegram.php");
 
+    // Pegar os dados do body, que contem a mensagem do usuario!
+
     ControllerApiTelegram::sendMessage("Chatbot respondendo!");
 
     $response->getBody()->write("Chatbot respondendo!");
