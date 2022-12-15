@@ -22,6 +22,7 @@ $app->get('/hello/', function (Request $request, Response $response, array $args
 
 $app->get('/', function (Request $request, Response $response, array $args) {
     $response->getBody()->write("Index! Api de Gelvazio!");
+
     return $response;
 });
 
@@ -31,32 +32,26 @@ $app->get('/testbot/', function (Request $request, Response $response, array $ar
 //    ControllerApiTelegram::sendMessage("Informe seu CPF para iniciar a conversa! Senac - Testes 123");
 
     $response->getBody()->write("Enviando mensagem para o chatbot!");
+
+    return $response;
 });
 
-$app->get('/testbotusername/', function (Request $request, Response $response, array $args) {
+$app->get('/testbotusername/{name}', function (Request $request, Response $response, array $args) {
 
     require_once ("controllers/ControllerApiTelegram.php");
 
-    ControllerApiTelegram::sendMessage("Chatbot Gelvazio!Senac");
+    $name = $args['name'];
+
+    $nomeInformado = "Branco";
+    if(isset($name)){
+        $nomeInformado = $name;
+    }
+
+    ControllerApiTelegram::sendMessage("Chatbot Gelvazio!Parametro Informado:" . $nomeInformado);
 
     $response->getBody()->write("Enviando mensagem para o chatbot!");
-});
 
-// Testar se precisar....
-//$app->get('/testbotstatus/', function (Request $request, Response $response, array $args) {
-//
-//    require_once ("controllers/ControllerApiTelegram.php");
-//
-//    ControllerApiTelegram::sendMessage("Informe seu CPF para iniciar a conversa! Senac - Testes");
-//
-//    $aDadosTelegramId = ControllerApiTelegram::callApiTelegramUpdates();
-//
-//    $reasonPhrase = json_encode($aDadosTelegramId);
-//
-//    $response->withStatus(200, $reasonPhrase);
-//
-//
-//    // $response->getBody()->write("Enviando mensagem para o chatbot!");
-//});
+    return $response;
+});
 
 $app->run();
