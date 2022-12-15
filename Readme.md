@@ -11,6 +11,10 @@ Equipe Carlos - Matheus
 https://php-slim-vercel-eight.vercel.app/
 
 Equipe Victor - Raissa
+https://php-slim-vercel-eta.vercel.app
+
+Amanda
+https://php-slim-vercel.vercel.app/
 
 
 
