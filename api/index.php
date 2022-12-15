@@ -28,7 +28,7 @@ $app->get('/testbot/', function (Request $request, Response $response, array $ar
     
     require_once ("controllers/ControllerApiTelegram.php");
     
-    ControllerApiTelegram::sendMessage("Informe seu CPF para iniciar a conversa! Senac - Testes");
+    ControllerApiTelegram::sendMessage("Informe seu CPF para iniciar a conversa! Senac - Testes 123");
 
     $response->getBody()->write("Enviando mensagem para o chatbot!");
 });
