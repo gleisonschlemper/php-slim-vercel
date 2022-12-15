@@ -34,7 +34,7 @@ class ControllerApiTelegram extends ControllerApiBase {
     }
 
     // Chat id do bot - bot-gelvazio-senac
-    public static function sendMessage($message, $telegram_chat_id = 5455911022){
+    public static function sendMessage($message, $telegram_chat_id = 5014906437){
         // instancia do bot com o token gerado
         $oBotApi = new BotApi(self::TELEGRAM_BOT_TOKEN);
         

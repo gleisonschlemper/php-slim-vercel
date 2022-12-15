@@ -35,7 +35,7 @@ class ControllerApiBase {
     // const TELEGRAM_BOT_TOKEN = '5887064892:AAE4TKkPpM8t6DFdqokWkSqXB-iItLk9TKU';
 
     // Novo bot Aula
-    const TELEGRAM_BOT_TOKEN = '5925893324:AAGmknvJVxkuHfdS1TT0kBlLRlg0UKvz95Q';
+    const TELEGRAM_BOT_TOKEN = '5779987512:AAHbhTIg25YiAEoKjgBr075XG92G3QgT19k';
 
     // TOKEN BOT ALEX
     // const TELEGRAM_BOT_TOKEN = '5362336257:AAHR6gjMXofy8kc8bjeO2NZzj3gcqsmtzjQ';
