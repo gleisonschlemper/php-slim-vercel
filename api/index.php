@@ -49,7 +49,7 @@ $app->get('/testbotusername/{name}', function (Request $request, Response $respo
 
     ControllerApiTelegram::sendMessage("Chatbot Gelvazio!Parametro Informado:" . $nomeInformado);
 
-    $response->getBody()->write("Enviando mensagem para o chatbot!");
+    $response->getBody()->write("Enviando mensagem para o chatbot!Parametro Informado:" . $nomeInformado);
 
     return $response;
 });
