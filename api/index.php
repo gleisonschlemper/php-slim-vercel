@@ -99,9 +99,9 @@ $app->get('/listdados', function (Request $request, Response $response, array $a
 
     $aDadosWebhook = ControllerApiTelegram::getUpdatesTelegram();
 
-    $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
+    //$response->getBody()->write("Dados Webhook" . $aDadosWebhook);
 
-    return $response;
+    return $aDadosWebhook;
 });
 
 $app->run();
