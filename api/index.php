@@ -72,7 +72,7 @@ $app->post('/setwebhook/', function (Request $request, Response $response, array
     return $response;
 });
 
-$app->get('/webhook', function (Request $request, Response $response, array $args) {
+$app->post('/webhook', function (Request $request, Response $response, array $args) {
     require_once ("controllers/ControllerApiTelegram.php");
 
     // Pegar os dados do body, que contem a mensagem do usuario!
@@ -88,6 +88,16 @@ $app->get('/listwebhook', function (Request $request, Response $response, array 
     require_once ("controllers/ControllerApiTelegram.php");
 
     $aDadosWebhook = ControllerApiTelegram::getWebhookInfo();
+
+    $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
+
+    return $response;
+});
+
+$app->get('/listdados', function (Request $request, Response $response, array $args) {
+    require_once ("controllers/ControllerApiTelegram.php");
+
+    $aDadosWebhook = ControllerApiTelegram::getUpdatesTelegram();
 
     $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
 
