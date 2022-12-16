@@ -85,23 +85,19 @@ $app->post('/webhook', function (Request $request, Response $response, array $ar
 });
 
 $app->get('/listwebhook', function (Request $request, Response $response, array $args) {
-    require_once ("controllers/ControllerApiTelegram.php");
+    $url = "https://api.telegram.org/bot5779987512:AAHbhTIg25YiAEoKjgBr075XG92G3QgT19k/getUpdates";
 
-    $aDadosWebhook = ControllerApiTelegram::getWebhookInfo();
-
-    $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
-
-    return $response;
+    return $url;
 });
 
-$app->get('/listdados', function (Request $request, Response $response, array $args) {
-    require_once ("controllers/ControllerApiTelegram.php");
+// $app->get('/listdados', function (Request $request, Response $response, array $args) {
+//     require_once ("controllers/ControllerApiTelegram.php");
 
-    $aDadosWebhook = ControllerApiTelegram::getUpdatesTelegram();
+//     $aDadosWebhook = ControllerApiTelegram::getUpdatesTelegram();
 
-    //$response->getBody()->write("Dados Webhook" . $aDadosWebhook);
+//    // $response->getBody()->write("Dados Webhook" . $aDadosWebhook);
 
-    return $aDadosWebhook;
-});
+//     return $aDadosWebhook ;
+// });
 
 $app->run();
